@@ -17,7 +17,7 @@ class FaceDetectorService {
   void initialize() {
     _faceDetector = GoogleMlKit.vision.faceDetector(
       FaceDetectorOptions(
-        mode: FaceDetectorMode.accurate,
+        performanceMode: FaceDetectorMode.accurate,
       ),
     );
 
@@ -31,10 +31,9 @@ class FaceDetectorService {
   Future<void> detectFacesFromImage(CameraImage image) async {
     InputImageData _firebaseImageMetadata = InputImageData(
       imageRotation:
-          _cameraService.cameraRotation ?? InputImageRotation.Rotation_0deg,
+          _cameraService.cameraRotation ?? InputImageRotation.rotation0deg,
       inputImageFormat:
-          InputImageFormatMethods.fromRawValue(image.format.raw) ??
-              InputImageFormat.NV21,
+          InputImageFormat.nv21,
       size: Size(image.width.toDouble(), image.height.toDouble()),
       planeData: image.planes.map(
         (Plane plane) {
