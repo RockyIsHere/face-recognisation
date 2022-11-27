@@ -6,7 +6,6 @@ import 'package:face_net_authentication/pages/widgets/app_button.dart';
 import 'package:face_net_authentication/services/camera.service.dart';
 import 'package:face_net_authentication/services/ml_service.dart';
 import 'package:flutter/material.dart';
-import 'package:image/image.dart';
 import '../home.dart';
 import 'app_text_field.dart';
 
